@@ -9,7 +9,7 @@
             <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Comics</a>
+            <a class="nav-link {{ request()->routeIs('comics.index') ? 'active' : '' }}" href="/comics">Comics</a>
           </li>
         </ul>
       </div>
