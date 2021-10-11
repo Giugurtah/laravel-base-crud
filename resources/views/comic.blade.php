@@ -5,8 +5,8 @@
 @section('content')
 <main>
     <div class="card w-75 mt-5 mx-auto">
-        <div class="card-body text-center">
-            <table class="table">
+        <div class="card-body">
+            <table class="table align-middle">
                 <thead>
                   <tr>
                     <th scope="col">Title</th>
@@ -23,7 +23,7 @@
                         <td>{{$comic->series}}</td>
                         <td>{{$comic->price}}</td>
                         <td>{{$comic->sale_date}}</td>
-                        <td></td>
+                        <td> <a class="btn btn-primary" href="{{ route('comics.show', $comic->id) }}" role="button">See comic</a> </td>
                         </tr>
                     @empty
                     @endforelse

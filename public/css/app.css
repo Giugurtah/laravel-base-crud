@@ -12183,6 +12183,10 @@ body {
   background-repeat: no-repeat;
 }
 
+ul li {
+  list-style: none;
+}
+
 .brand_color {
   color: #1b7fe8;
 }
