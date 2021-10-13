@@ -38,7 +38,7 @@ class ComicController extends Controller
     {
         $data = $request->all();
         $comic = Comic::create($data);
-        return view('comic.comicShow', compact('comic'));
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
