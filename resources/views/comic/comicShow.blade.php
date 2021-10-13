@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
 @section('title')
-    {{$comic->title}}
+    {{ "DC | " . $comic->title }}
 @endsection
 
 @section('content')
     <main>
-        <div class="card w-75 mt-5 mx-auto">
+        <div class="card w-75 my-5 mx-auto">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
                     <img src="{{ $comic->thumb }}" height="200" class="mt-2" alt="comic thumb">
