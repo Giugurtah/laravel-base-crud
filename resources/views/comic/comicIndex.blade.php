@@ -18,7 +18,7 @@
                 <th scope="col">Series</th>
                 <th scope="col">Price</th>
                 <th scope="col">Sale date</th>
-                <th scope="col">Action</th>
+                <th scope="col" width="250">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -28,9 +28,14 @@
                 <td>{{$comic->series}}</td>
                 <td>{{$comic->price}}</td>
                 <td>{{$comic->sale_date}}</td>
-                <td> 
-                  <a class="btn btn-primary" href="{{ route('comics.show', $comic->id) }}" role="button">See comic</a> 
-                  <a class="btn btn-secondary" href="{{ route('comics.edit', $comic->id) }}" role="button">Update</a> 
+                <td class="position-relative"> 
+                  <a class="btn mb-2 btn-primary" href="{{ route('comics.show', $comic->id) }}" role="button">See</a> 
+                  <a class="btn mb-2 btn-secondary" href="{{ route('comics.edit', $comic->id) }}" role="button">Update</a> 
+                  <form class="d-inline-block position-absolute t-0 ms-2 mb-2" action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
                 </td>
                 </tr>
               @empty
