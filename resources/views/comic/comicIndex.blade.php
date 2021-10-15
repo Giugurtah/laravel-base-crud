@@ -31,7 +31,7 @@
                 <td class="position-relative"> 
                   <a class="btn mb-2 btn-primary" href="{{ route('comics.show', $comic->id) }}" role="button">See</a> 
                   <a class="btn mb-2 btn-secondary" href="{{ route('comics.edit', $comic->id) }}" role="button">Update</a> 
-                  <form class="d-inline-block position-absolute t-0 ms-2 mb-2" action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                  <form class="d-inline-block position-absolute t-0 ms-1 mb-2" action="{{ route('comics.destroy', $comic->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Delete</button>

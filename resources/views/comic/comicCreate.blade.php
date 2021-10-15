@@ -8,19 +8,28 @@
         <div class="card-body p-4">
             <form action="{{ route('comics.store') }}" method="POST" class="row">
                 @csrf
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul class="mb-0">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="col-6 mb-3">
                     <label for="title" class="form-label">Title:</label>
-                    <input type="text" class="form-control" id="title" name="title" required>
+                    <input type="text" class="form-control" id="title" name="title">
                     <div id="title" class="form-text">Insert comic title here</div>
                 </div>
                 <div class="col-6 mb-3">
                     <label for="series" class="form-label">Series:</label>
-                    <input type="text" class="form-control" id="series" name="series" required>
+                    <input type="text" class="form-control" id="series" name="series">
                     <div id="series" class="form-text">Insert comic series here</div>
                 </div>
                 <div class="col-6 mb-3">
                     <label for="price" class="form-label">Price:</label>
-                    <input type="number" step="0.01" class="form-control" id="price" name="price" required>
+                    <input type="number" step="0.01" class="form-control" id="price" name="price">
                     <div id="price" class="form-text">Insert comic price here</div>
                 </div>
                 <div class="col-6 mb-3">
